@@ -1,23 +1,35 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import Card from '@/components/Card.tsx';
+import Card from "@/components/Card.tsx";
 
 const meta = {
-  title: 'Elements/Card',
+  title: "Elements/Card",
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
+    size: {
+      control: "inline-radio",
+      options: ["sm", "md", "lg"],
+      description: "Size of the Card",
+    },
+    title: {
+      control: "text",
+      description:
+        "Title text to be displayed on the top bar of the Card component",
+    },
   },
-  args: { },
+  args: {},
 } satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const regular: Story = {
   args: {
+    size: "sm",
+    title: "Title",
   },
 };
