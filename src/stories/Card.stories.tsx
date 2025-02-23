@@ -25,11 +25,20 @@ const meta = {
 } satisfies Meta<typeof Card>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
-export const regular: Story = {
-  args: {
-    size: "sm",
-    title: "Title",
-  },
+export const main = () => {
+  return (
+    <Card>
+      <Card.Title>Hello</Card.Title>
+      <Card.Content>testing</Card.Content>
+    </Card>
+  );
 };
+
+// export const regular: Story = {
+//   args: {
+//     size: "sm",
+//     title: "Title",
+//   },
+// };

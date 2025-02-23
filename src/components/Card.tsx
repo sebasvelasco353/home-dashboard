@@ -1,13 +1,22 @@
+import React from "react";
 import styles from "@/styles/card.module.scss";
 import { CardProps } from "@/common/Card.interface";
 
-export default function Card({ size = "md", title }: CardProps) {
+const Card = ({ size = "md", children }: CardProps) => {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2>{title}</h2>
-      </div>
-      <p>Card of size {size}</p>
+      {children}
+      {size}
     </div>
   );
-}
+};
+
+Card.Title = ({ children }: { children: React.ReactNode }) => {
+  return <h2 className={styles.header}>{children}</h2>;
+};
+
+Card.Content = ({ children }: { children: React.ReactNode }) => {
+  return <div className={styles.content}>{children}</div>;
+};
+
+export default Card;
