@@ -4,11 +4,22 @@
 }
 .header {
   border-radius: 9px 9px 0 0;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem;
   border-bottom: 2px solid black;
-  font-size: var(--font-size__title);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
   margin: 0;
   background-color: var(--light-red);
+  h2 {
+    font-size: var(--font-size__title);
+  }
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .content {
   padding: 0.5rem 1rem;
