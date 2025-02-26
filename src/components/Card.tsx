@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import styles from "@/styles/card.module.scss";
 import { CardProps } from "@/common/Card.interface";
 
+// TODO: Add a way to expand and collapse the content of the card component.
+// TODO: Add props to set the type: Warning, Info, Default.
+// TODO: Add Delete card functionality (a function that get called when the user click the close button).
+
 const Card = ({ size = "md", children }: CardProps) => {
+  const sizes = {
+    sm: styles.small,
+    md: styles.medium,
+    lg: styles.large,
+  };
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
-  function handleMinimizeClick() {
-    setIsExpanded((prev) => !prev);
-  }
-
-  return (
-    <div className={styles.container}>
-      {children}
-      {size}
-    </div>
-  );
+  return <div className={`${styles.container} ${sizes[size]}`}>{children}</div>;
 };
 
 Card.Title = ({ children }: { children: React.ReactNode }) => {
