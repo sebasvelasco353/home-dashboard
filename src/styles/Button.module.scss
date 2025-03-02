@@ -1,0 +1,27 @@
+// TODO: Fix colors for this component
+
+.button {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 2px solid black;
+  background-color: var(--blue);
+  color: black;
+
+  &--small {
+    min-width: 10rem;
+    max-width: 15rem;
+  }
+  &--medium {
+    min-width: 15rem;
+    max-width: 30rem;
+  }
+  &--large {
+    min-width: 30rem;
+  }
+
+  &--secondary {
+    background-color: var(--gray-blue);
+    color: white;
+  }
+}

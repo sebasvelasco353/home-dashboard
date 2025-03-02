@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "@/styles/card.module.scss";
-import { CardProps } from "@/common/Card.interface";
+import { CardProps } from "@/common/interfaces.ts";
 
 // TODO: Add a way to expand and collapse the content of the card component.
 // TODO: Add props to set the type: Warning, Info, Default.
@@ -12,7 +12,6 @@ const Card = ({ size = "md", children }: CardProps) => {
     md: styles.medium,
     lg: styles.large,
   };
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   return <div className={`${styles.container} ${sizes[size]}`}>{children}</div>;
 };
 

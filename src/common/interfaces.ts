@@ -5,3 +5,8 @@ export interface CardProps extends React.PropsWithChildren {
   title?: string;
   onClose?: () => void;
 }
+
+export interface ButtonProps {
+  text: string;
+  secondary?: boolean;
+}
