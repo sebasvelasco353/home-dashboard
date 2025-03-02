@@ -23,9 +23,22 @@
   --light-red: #ffd1d1;
   --dark-red: #a87676;
 
+  // Border
+  --border-color__dark: #1f2123;
+  --border__standar: 2px solid black;
+
   // font
   --font-size__title: 2rem;
   --font-size__text: 1.6rem;
+  --text-color__dark: #1f2123;
+  --text-color__light: #f2efe5;
+
+  // sizes
+  --size__small: 10rem;
+  --size__medium: 15rem;
+  --size__large: 30rem;
+  --gap: 10rem;
+  --border-radius: 10px;
 }
 
 * {

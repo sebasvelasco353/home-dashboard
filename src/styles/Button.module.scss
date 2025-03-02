@@ -2,26 +2,26 @@
 
 .button {
   padding: 1rem 1.5rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   font-weight: bold;
-  border: 2px solid black;
+  border: var(--border__standar);
   background-color: var(--blue);
-  color: black;
+  color: var(--text-color__dark);
 
   &--small {
-    min-width: 10rem;
-    max-width: 15rem;
+    min-width: var(--size__small);
+    max-width: var(--size__medium);
   }
   &--medium {
-    min-width: 15rem;
-    max-width: 30rem;
+    min-width: var(--size__medium);
+    max-width: var(--size__large);
   }
   &--large {
-    min-width: 30rem;
+    min-width: var(--size__large);
   }
 
   &--secondary {
     background-color: var(--gray-blue);
-    color: white;
+    color: var(--text-color__light);
   }
 }

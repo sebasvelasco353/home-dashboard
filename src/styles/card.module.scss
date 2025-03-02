@@ -1,18 +1,18 @@
 // TODO: Fix colors for this component
 
 .container {
-  border: 2px solid black;
-  border-radius: 10px;
+  border: var(--border__standar);
+  border-radius: var(--border-radius);
 }
 .header {
   border-radius: 9px 9px 0 0;
   padding: 0 1.5rem;
-  border-bottom: 2px solid black;
+  border-bottom: var(--border__standar);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: var(--gap);
   margin: 0;
   background-color: var(--light-red);
   h2 {
@@ -29,16 +29,16 @@
   padding: 2rem 1rem;
 }
 .small {
-  min-width: 10rem;
-  max-width: 15rem;
+  min-width: var(--size__small);
+  max-width: var(--size__medium);
   .header {
     gap: 0.5rem;
   }
 }
 .medium {
-  min-width: 15rem;
-  max-width: 30rem;
+  min-width: var(--size__medium);
+  max-width: var(--size__large);
 }
 .large {
-  min-width: 30rem;
+  min-width: var(--size__large);
 }
