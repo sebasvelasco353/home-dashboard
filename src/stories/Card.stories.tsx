@@ -32,3 +32,19 @@ export const Main: Story = {
     </Card>
   ),
 };
+export const info: Story = {
+  render: (args) => (
+    <Card type="info" size={args.size}>
+      <Card.Title>Hello</Card.Title>
+      <Card.Content>testing</Card.Content>
+    </Card>
+  ),
+};
+export const warning: Story = {
+  render: (args) => (
+    <Card type="warning" size={args.size}>
+      <Card.Title>Hello</Card.Title>
+      <Card.Content>testing</Card.Content>
+    </Card>
+  ),
+};

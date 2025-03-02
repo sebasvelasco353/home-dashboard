@@ -18,9 +18,10 @@
   h2 {
     font-size: var(--font-size__title);
   }
-  span {
+  &__actions {
     display: flex;
     flex-direction: row;
+    gap: 0.2rem;
     justify-content: center;
     align-items: center;
   }
@@ -41,4 +42,16 @@
 }
 .large {
   min-width: var(--size__large);
+}
+.warning {
+  .header {
+    color: var(--text-color__light);
+    background-color: var(--red);
+  }
+}
+.info {
+  .header {
+    color: var(--text-color__dark);
+    background-color: var(--green);
+  }
 }
