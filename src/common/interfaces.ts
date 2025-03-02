@@ -9,4 +9,6 @@ export interface CardProps extends React.PropsWithChildren {
 export interface ButtonProps {
   text: string;
   secondary?: boolean;
+  disabled?: boolean;
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
