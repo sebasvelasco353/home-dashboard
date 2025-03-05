@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState, useContext, createContext } from "react";
 import styles from "@/styles/card.module.scss";
 import { CardProps } from "@/common/interfaces.ts";
 
 // TODO: Add a way to expand and collapse the content of the card component.
-// TODO: Add set the styles for type: Warning, Info, Default.
 // TODO: Add Delete card functionality (a function that get called when the user click the close button).
 
+interface CardContextProps {
+  isExpanded: boolean;
+  handleChangeExpanded: () => void;
+}
+
+const CardContext = createContext<CardContextProps | null>(null);
+
 const Card = ({ size = "md", type = "default", children }: CardProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const sizes = {
     sm: styles.small,
     md: styles.medium,
@@ -18,20 +26,30 @@ const Card = ({ size = "md", type = "default", children }: CardProps) => {
     info: styles.info,
   };
 
+  const handleChangeExpanded = () => {
+    setIsExpanded((oldValue) => !oldValue);
+  };
+
   return (
     <div className={`${styles.container} ${sizes[size]} ${types[type]}`}>
-      {children}
+      <CardContext.Provider value={{ isExpanded, handleChangeExpanded }}>
+        {children}
+      </CardContext.Provider>
     </div>
   );
 };
 
-Card.Title = ({ children }: { children: React.ReactNode }) => {
+const Title = ({ children }: { children: React.ReactNode }) => {
+  const { isExpanded, handleChangeExpanded } = useContext(CardContext);
+
   return (
     <div className={styles.header}>
       <h2>{children}</h2>
+      <span>{isExpanded ? "s" : "n"}</span>
       <div className={styles.header__actions}>
         {/* Arrow down icon */}
         <svg
+          onClick={handleChangeExpanded}
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
@@ -40,7 +58,6 @@ Card.Title = ({ children }: { children: React.ReactNode }) => {
         >
           <path d="M480-360 280-560h400L480-360Z" />
         </svg>
-
         {/* other options icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,4 +77,5 @@ Card.Content = ({ children }: { children: React.ReactNode }) => {
   return <div className={styles.content}>{children}</div>;
 };
 
+Card.Title = Title;
 export default Card;
